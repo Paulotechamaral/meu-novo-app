@@ -1,10 +1,10 @@
-name : CI
+name: CI
 
 on:
-push:
-  branches: [main]
-pull_request:
-  branches: [main]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 15
     concurrency:
       group: ci-${{ github.workflow}}-${{ github.ref}}
-      cancel-in-progess: true
+      cancel-in-progress: true
 
     steps:
       - name: Checkout
